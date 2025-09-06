@@ -1,2 +1,6 @@
 # python
-Repositório de Python
+Repositório de python
+
+Vídeo de Python:
+
+
