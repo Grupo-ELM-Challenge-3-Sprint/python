@@ -1,5 +1,5 @@
 from database.dados import _dados_de_usuarios
-from core.cadastro_e_login import cadastrar_usuario, fazer_login
+from core.cadastro_login_senha import cadastrar_usuario, fazer_login, recuperar_senha
 from core.crud import submenu_crud_agendas
 from core import guia_interativo_e_ia
 from core.tutoriais import *
@@ -23,7 +23,8 @@ def mostrar_menu_principal():
     print("=" * 42)
     print("1. Cadastro de Novo Usuário")
     print("2. Login (Entrar no Sistema)")
-    print("3. Ajuda e Informações Gerais")
+    print("3. Recuperar Senha")
+    print("4. Ajuda e Informações Gerais")
     print("0. Sair do Sistema")
     print("=" * 42)
 
@@ -53,15 +54,18 @@ def menu_usuario_logado(usuario_logado):
             print("║         ⭐ Modo Guia Interativo ATIVO ⭐        ║")
         print("╚══════════════════════════════════════════════╝\n")
         
-        print("1. Tutorial de como cadastrar no app HC")
+        print("1. Tutorial de como cadastrar no App HC")
         print("2. Tutorial de como logar no App HC")
-        print("3. Tutorial de como acessar Resultados de Exames")
-        print("4. Tutorial de como acessar Receitas Médicas")
-        print("5. Tutorial de como acessar Minhas Agendas (Consultas/Exames Marcados)")
-        print("6. Tutorial de como acessar as Teleconsulta")
-        print("7. Tutorial de como acessar os Meus Dados")
-        print("8. IA e Guia Interativo")
-        print("9. CRUD - Minhas Agendas (Listar/Adicionar/Atualizar/Excluir)")
+        print("3. Tutorial Esqueci minha Senha no App HC")
+        print("4. Tutorial de como acessar Resultados de Exames")
+        print("5. Tutorial de como acessar Receitas Médicas")
+        print("6. Tutorial de como acessar Minhas Agendas (Consultas/Exames Marcados)")
+        print("7. Tutorial de como acessar as Teleconsulta")
+        print("8. Tutorial de como acessar Solicitação de Exames")
+        print("9. Tutorial de como acessar Solicitação de Documentos")
+        print("10. Tutorial de como acessar os Meus Dados")
+        print("11. IA e Guia Interativo")
+        print("12. CRUD - Minhas Agendas")
         print("0. Sair (Logout)")
         print("=" * 46)
 
@@ -76,30 +80,42 @@ def menu_usuario_logado(usuario_logado):
             tutorial_login(modo_guia_interativo_ativo)
             input("\nPressione Enter para voltar ao menu do usuário...")
 
-        elif opcao_login == '3':  # Tutorial de Resultados
+        elif opcao_login == '3':  # Tutorial Esqueci Senha
+            tutorial_esqueci_senha(modo_guia_interativo_ativo)
+            input("\nPressione Enter para voltar ao menu do usuário...")
+
+        elif opcao_login == '4':  # Tutorial de Resultados
             tutorial_resultados(modo_guia_interativo_ativo)
             input("\nPressione Enter para voltar ao menu do usuário...")
 
-        elif opcao_login == '4':  # Tutorial de Receitas
+        elif opcao_login == '5':  # Tutorial de Receitas
             tutorial_receitas(modo_guia_interativo_ativo)
             input("\nPressione Enter para voltar ao menu do usuário...")
 
-        elif opcao_login == '5':  # Tutorial de Agendas
+        elif opcao_login == '6':  # Tutorial de Agendas
             tutorial_agendas(modo_guia_interativo_ativo)
             input("\nPressione Enter para voltar ao menu do usuário...")
 
-        elif opcao_login == '6':  # Tutorial de Teleconsulta
+        elif opcao_login == '7':  # Tutorial de Teleconsulta
             tutorial_teleconsulta(modo_guia_interativo_ativo)
             input("\nPressione Enter para voltar ao menu do usuário...")
 
-        elif opcao_login == '7':  # Tutorial de Meus Dados
+        elif opcao_login == '8':  # Solicitação de Exames (HC)
+            tutorial_solicitacao_exames(modo_guia_interativo_ativo)
+            input("\nPressione Enter para voltar ao menu do usuário...")
+
+        elif opcao_login == '9':  # Solicitação de Documentos (HC)
+            tutorial_solicitacao_documentos(modo_guia_interativo_ativo)
+            input("\nPressione Enter para voltar ao menu do usuário...")
+
+        elif opcao_login == '10':  # Meus Dados
             tutorial_meus_dados(modo_guia_interativo_ativo)
             input("\nPressione Enter para voltar ao menu do usuário...")
 
-        elif opcao_login == '8':  # Ajuda e Suporte
-            modo_guia_interativo_ativo = guia_interativo_e_ia(modo_guia_interativo_ativo)
+        elif opcao_login == '11':  # IA e Guia Interativo
+            modo_guia_interativo_ativo = guia_interativo_e_ia.guia_interativo_e_ia(modo_guia_interativo_ativo)
 
-        elif opcao_login == '9':  # CRUD Agendas
+        elif opcao_login == '12':  # CRUD Agendas
             submenu_crud_agendas(email_usuario)
 
         elif opcao_login == '0':
@@ -132,6 +148,9 @@ if __name__ == "__main__":
 
 
         elif opcao_principal == '3':
+            recuperar_senha()
+
+        elif opcao_principal == '4':
             mostrar_menu_ajuda_principal()
 
         elif opcao_principal == '0':

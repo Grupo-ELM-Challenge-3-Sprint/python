@@ -7,23 +7,20 @@ def guia_interativo_e_ia(modo_guia_interativo_ativo: bool) -> bool:
         print("╚══════════════════════════════════════════════╝\n")
         print("Olá! Esta é a sua Central para gerenciar o Guia Interativo e falar com a IA do SimplesHC.")
         print("Selecione um tópico para saber mais:")
-
         print("1. Falar com o Assistente Virtual (para Perguntas Frequentes).")
         print(f"2. Modo Guia Interativo: [{'DESATIVAR' if modo_guia_interativo_ativo else 'ATIVAR'}] Ajuda visual passo a passo.")
-
         print("\n  0. Voltar ao menu do usuário.")
         print("=" * 50)
 
         prompt_ajuda = "Escolha uma opção de ajuda (digite o número): "
-
         if modo_guia_interativo_ativo:
             prompt_ajuda = "[Guia] Digite o número da ajuda que precisa (1, 2, 3, 4 ou 0): "
 
         escolha_ajuda = input(prompt_ajuda)
         
         if escolha_ajuda == '1':
-            print("\n--- Assistente Virtual (Simulação) ---")
-            print("[Assistente Virtual]: Olá! Sou o assistente virtual do HC. Estou aqui para ajudar com perguntas comuns.")
+            print("\n--- Assistente Virtual ---")
+            print("[Assistente Virtual]: Olá! Sou o assistente virtual do SimplesHC. Posso ajudar com dúvidas frequentes.")
             print("  Por exemplo, você pode perguntar:")
             print("    'Como vejo meus exames?'")
             print("    'Esqueci minha senha, e agora?'")
@@ -31,13 +28,11 @@ def guia_interativo_e_ia(modo_guia_interativo_ativo: bool) -> bool:
             user_query = input("Digite sua pergunta (ou 'sair' para voltar): ").lower()
             
             if "exames" in user_query or "resultados" in user_query:
-                print("[Assistente Virtual]: Para ver seus exames, vá ao Menu do Usuário e escolha a opção '3. Tutorial de como acessar Resultados de Exames'.")
+                print("[Assistente Virtual]: Para ver resultados, acesse a seção 'Resultados de Exames' no Portal do Paciente HC após o login.")
             elif "senha" in user_query:
                 print("[Assistente Virtual]: Se esqueceu sua senha, na tela de login principal, deveria haver uma opção 'Esqueci minha senha'.")
-                print("  (Esta funcionalidade ainda será implementada). Por enquanto, contate o suporte do hospital se não conseguir logar.")
             elif "teleconsulta" in user_query:
-                print("[Assistente Virtual]: Para teleconsultas, verifique 'Minhas Agendas' (opção 5) para datas e horários.")
-                print("  O link de acesso geralmente é enviado perto da data. Veja também a opção '6. Tutorial de como acessar as Teleconsulta'.")
+                print("[Assistente Virtual]: Para teleconsultas, confirme data e horário em 'Agendas' e acesse o link no horário marcado.")
             elif user_query == 'sair':
                 print("[Assistente Virtual]: Entendido! Se precisar de mais algo, é só chamar.")
             else:

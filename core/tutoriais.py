@@ -4,9 +4,9 @@
 # =============================================================================
 
 def tutorial_cadastro(modo_guia_ativo):
-    # Tutorial de como cadastrar no app HC
+    # Tutorial de como se cadastrar no Portal do Paciente HC
     print("\n╔══════════════════════════════════════════════╗")
-    print("║        TUTORIAL: COMO SE CADASTRAR          ║")
+    print("║  TUTORIAL: CADASTRO NO PORTAL DO PACIENTE HC ║")
     print("╚══════════════════════════════════════════════╝")
     
     print("\n📝 PASSO A PASSO PARA CADASTRO:")
@@ -27,12 +27,12 @@ def tutorial_cadastro(modo_guia_ativo):
         print("• Escolha uma senha que você consiga lembrar")
         print("• Anote seus dados em local seguro")
     
-    print("\n✅ Após o cadastro, você poderá fazer login e acessar todos os serviços!")
+    print("\n✅ Após o cadastro, você poderá acessar serviços do HC: resultados, receitas, agendamentos e teleconsultas.")
 
 def tutorial_login(modo_guia_ativo):
-    # Tutorial de como fazer login no app HC
+    # Tutorial de como fazer login no Portal do Paciente HC
     print("\n╔══════════════════════════════════════════════╗")
-    print("║         TUTORIAL: COMO FAZER LOGIN           ║")
+    print("║    TUTORIAL: LOGIN NO PORTAL DO PACIENTE HC  ║")
     print("╚══════════════════════════════════════════════╝")
     
     print("\n🔐 PASSO A PASSO PARA LOGIN:")
@@ -48,40 +48,67 @@ def tutorial_login(modo_guia_ativo):
         print("• Se esquecer a senha, contate o suporte")
         print("• Sempre faça logout quando terminar")
     
-    print("\n✅ Se os dados estiverem corretos, você será direcionado ao menu do usuário!")
+    print("\n✅ Se os dados estiverem corretos, você entra no Portal e pode usar os serviços do HC.")
+
+
+#Tutoriais Depois que usuário logou
+
+def tutorial_esqueci_senha(modo_guia_ativo):
+    # Tutorial de como recuperar senha no Portal do Paciente HC
+    print("\n╔══════════════════════════════════════════════╗")
+    print("║      TUTORIAL: ESQUECI MINHA SENHA (HC)     ║")
+    print("╚══════════════════════════════════════════════╝")
+
+    print("\n🔑 COMO RECUPERAR SUA SENHA:")
+    print("1. Na tela de login do Portal do Paciente HC")
+    print("2. Clique em 'Esqueci minha senha' ou 'Recuperar senha'")
+    print("3. Digite seu CPF cadastrado no sistema")
+    print("4. Digite o email cadastrado no seu perfil")
+    print("5. Verifique sua caixa de entrada (e spam) para o email de recuperação")
+    print("6. Siga as instruções do email para criar uma nova senha")
+
+    if modo_guia_ativo:
+        print("\n[Guia]: 💡 DICAS IMPORTANTES:")
+        print("• Use o mesmo email que cadastrou no Portal")
+        print("• Verifique a caixa de spam se não receber o email")
+        print("• O email pode demorar alguns minutos para chegar")
+        print("• Se não receber, contate o suporte do HC")
+        print("• Crie uma senha forte e anote em local seguro")
+
+    print("\n✅ Após recuperar, você poderá fazer login normalmente no Portal!")
 
 def tutorial_resultados(modo_guia_ativo):
-    # Tutorial de como acessar resultados de exames
+    # Tutorial de como acessar resultados de exames no HC
     print("\n╔══════════════════════════════════════════════╗")
     print("║     TUTORIAL: ACESSAR RESULTADOS DE EXAMES   ║")
     print("╚══════════════════════════════════════════════╝")
     
     print("\n🔬 COMO ACESSAR SEUS RESULTADOS:")
-    print("1. Faça login no sistema")
-    print("2. No menu do usuário, escolha a opção '3. Tutorial de como acessar Resultados de Exames'")
-    print("3. Seus exames aparecerão listados com data e descrição")
-    print("4. Você pode visualizar todos os resultados disponíveis")
+    print("1. Faça login no Portal do Paciente HC, em seguida clique em 'Menu'")
+    print("2. No menu do Portal, clique na opção 'Meus Resultados'")
+    print("3. Selecione e Visualize os Resultados de Exames de Laboratório ou Imagem")
+    print("4. Visualize os Resultados de Exames com data, descrição e status do laudo")
     
     if modo_guia_ativo:
         print("\n[Guia]: 📋 INFORMAÇÕES IMPORTANTES:")
         print("• Os resultados ficam disponíveis 24h por dia")
         print("• Você pode acessar de qualquer lugar")
-        print("• Os dados são atualizados automaticamente")
-        print("• Em caso de dúvidas, consulte seu médico")
+        print("• Os dados são atualizados quando liberados pelos setores do HC")
+        print("• Em caso de dúvidas sobre o laudo, consulte seu médico assistente")
     
     print("\n✅ Seus resultados estão sempre seguros e acessíveis!")
 
 def tutorial_receitas(modo_guia_ativo):
-    # Tutorial de como acessar receitas médicas
+    # Tutorial de como acessar receitas médicas no HC
     print("\n╔══════════════════════════════════════════════╗")
     print("║      TUTORIAL: ACESSAR RECEITAS MÉDICAS      ║")
     print("╚══════════════════════════════════════════════╝")
     
     print("\n💊 COMO ACESSAR SUAS RECEITAS:")
-    print("1. Faça login no sistema")
-    print("2. No menu do usuário, escolha a opção '4. Tutorial de como acessar Receitas Médicas'")
-    print("3. Suas receitas aparecerão listadas com medicamentos e dosagens")
-    print("4. Você pode visualizar todas as prescrições ativas")
+    print("1. Faça login no Portal do Paciente HC, em seguida clique em 'Menu'")
+    print("2. No menu do Portal, clique na opção 'Minhas Receitas'")
+    print("3. Veja a lista de prescrições com medicamentos, dosagens e validade")
+    print("4. Visualize prescrições ativas/Inativas e, quando aplicável, instruções de uso")
     
     if modo_guia_ativo:
         print("\n[Guia]: ⚠️ CUIDADOS IMPORTANTES:")
@@ -93,16 +120,16 @@ def tutorial_receitas(modo_guia_ativo):
     print("\n✅ Suas receitas ficam sempre disponíveis para consulta!")
 
 def tutorial_agendas(modo_guia_ativo):
-    # Tutorial de como acessar agendas de consultas e exames
+    # Tutorial de como acessar agendas de consultas e exames no HC
     print("\n╔══════════════════════════════════════════════╗")
-    print("║    TUTORIAL: ACESSAR AGENDAS E CONSULTAS     ║")
+    print("║          TUTORIAL: ACESSAR AGENDAS           ║")
     print("╚══════════════════════════════════════════════╝")
     
     print("\n📅 COMO ACESSAR SUAS AGENDAS:")
-    print("1. Faça login no sistema")
-    print("2. No menu do usuário, escolha a opção '5. Tutorial de como acessar Minhas Agendas'")
-    print("3. Suas consultas e exames aparecerão com data, hora e especialidade")
-    print("4. Você pode visualizar todos os agendamentos futuros")
+    print("1. Faça login no Portal do Paciente HC, em seguida clique em 'Menu'")
+    print("2. No menu do Portal, clique na opção 'Minhas Agendas'")
+    print("3. Consulte data, hora, local e especialidade dos atendimentos")
+    print("4. Verifique orientações específicas do exame/consulta, quando houver")
     
     if modo_guia_ativo:
         print("\n[Guia]: ⏰ LEMBRETES ÚTEIS:")
@@ -114,16 +141,16 @@ def tutorial_agendas(modo_guia_ativo):
     print("\n✅ Nunca perca um compromisso médico importante!")
 
 def tutorial_teleconsulta(modo_guia_ativo):
-    # Tutorial de como acessar teleconsultas
+    # Tutorial de como acessar teleconsultas do HC
     print("\n╔══════════════════════════════════════════════╗")
     print("║        TUTORIAL: ACESSAR TELECONSULTAS       ║")
     print("╚══════════════════════════════════════════════╝")
     
     print("\n💻 COMO ACESSAR TELECONSULTAS:")
-    print("1. Faça login no sistema")
-    print("2. No menu do usuário, escolha a opção '6. Tutorial de como acessar as Teleconsulta'")
-    print("3. Verifique se há teleconsultas agendadas")
-    print("4. Acesse o link fornecido no horário marcado")
+    print("1. Faça login no Portal do Paciente HC, em seguida clique em 'Menu'")
+    print("2. No menu do Portal, clique na opção 'Teleconsultas'")
+    print("3. Verifique se há teleconsultas agendadas na sua agenda")
+    print("4. No horário marcado, acesse o link informado para a consulta online")
     
     if modo_guia_ativo:
         print("\n[Guia]: 🎥 PREPARAÇÃO PARA TELECONSULTA:")
@@ -135,15 +162,51 @@ def tutorial_teleconsulta(modo_guia_ativo):
     
     print("\n✅ A teleconsulta é uma forma prática e segura de cuidar da sua saúde!")
 
+def tutorial_solicitacao_exames(modo_guia_ativo):
+    # Tutorial de como solicitar/exibir solicitações de exames no HC
+    print("\n╔══════════════════════════════════════════════╗")
+    print("║     TUTORIAL: SOLICITAÇÃO DE EXAMES (HC)     ║")
+    print("╚══════════════════════════════════════════════╝")
+
+    print("\n🧪 SOLICITAÇÃO DE EXAMES PELO PORTAL:")
+    print("1. Faça login no Portal do Paciente HC, em seguida clique em 'Menu'")
+    print("2. No menu do Portal, clique na opção 'Solicitação de Exames'")
+    print("3. Verifique orientações: alguns exames exigem guia médica e agendamento")
+    print("4. Acompanhe solicitações e, após a coleta/realização, consulte 'Resultados'")
+
+    if modo_guia_ativo:
+        print("\n[Guia]: Dúvidas sobre preparo de exames? Consulte as orientações exibidas na tela do Portal.")
+        print("[Guia]: Nem todos os exames podem ser solicitados diretamente pelo paciente; siga a prescrição médica.")
+
+    print("\n✅ Utilize o Portal para acompanhar o status e conferir resultados quando liberados.")
+
+
+def tutorial_solicitacao_documentos(modo_guia_ativo):
+    # Tutorial de como solicitar documentos/prontuário no HC
+    print("\n╔══════════════════════════════════════════════╗")
+    print("║        TUTORIAL: MEUS DOCUMENTOS (HC)        ║")
+    print("╚══════════════════════════════════════════════╝")
+
+    print("\n📄 COMO SOLICITAR DOCUMENTOS:")
+    print("1. Faça login no Portal do Paciente HC, em seguida clique em 'Menu'")
+    print("2. No menu do Portal, clique na opção 'Documentos'")
+    print("3. Em seguida clique em 'Meus Documentos'")
+
+    if modo_guia_ativo:
+        print("\n[Guia]: Documentos do prontuário podem exigir identificação e prazos legais para entrega.")
+        print("[Guia]: Verifique no Portal os canais de contato/retirada informados pela unidade do HC.")
+
+    print("\n✅ Agora pode visualizar os seus Documentos.")
+
 def tutorial_meus_dados(modo_guia_ativo):
-    # Tutorial de como acessar e editar dados pessoais
+    # Tutorial de como acessar e editar dados pessoais no Portal do HC
     print("\n╔══════════════════════════════════════════════╗")
     print("║       TUTORIAL: ACESSAR MEUS DADOS           ║")
     print("╚══════════════════════════════════════════════╝")
     
     print("\n👤 COMO ACESSAR SEUS DADOS:")
-    print("1. Faça login no sistema")
-    print("2. No menu do usuário, escolha a opção '7. Tutorial de como acessar os Meus Dados'")
+    print("1. Faça login no Portal do Paciente HC, em seguida clique em 'Menu'")
+    print("2. No menu do Portal, clique na opção 'Meus Dados'")
     print("3. Visualize todas as suas informações cadastrais")
     print("4. Edite os dados que precisam ser atualizados")
     
@@ -160,7 +223,6 @@ def tutorial_meus_dados(modo_guia_ativo):
 
 
 # Isso aparece no tutoriais do usuário SEM LOGAR, no início do programa
-
 def mostrar_menu_ajuda_principal():
     while True:
         print("\n╔═════════════════════════════════════════╗")
