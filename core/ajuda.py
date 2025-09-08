@@ -68,6 +68,8 @@ while True:
             print("[Assistente Virtual]: Entendido! Se precisar de mais algo, é só chamar.")
         else:
             print("[Assistente Virtual]: Desculpe, ainda estou aprendendo. Para essa dúvida, sugiro consultar as outras opções de ajuda ou contatar o suporte humano do hospital.")
+    
+    #Ativar GUIA INTERATIVO
     elif escolha_ajuda == '4':
         modo_guia_interativo_ativo = not modo_guia_interativo_ativo
         if modo_guia_interativo_ativo:

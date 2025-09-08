@@ -1,7 +1,7 @@
 # Importa o módulo de validações (funções para validar CPF, email, celular)
-import assets.dados_cadastro_login.validacoes as validacoes
+import core.validacoes as validacoes
 # Importa os dados de usuários e serviços do módulo de dados
-from assets.dados_cadastro_login.dados import _dados_de_usuarios, _dados_usuarios_servicos
+from database.dados import _dados_de_usuarios, _dados_usuarios_servicos
 
 # Lista para armazenar os dados dos usuários
 # Cada item da lista será um dicionário com os dados do usuário

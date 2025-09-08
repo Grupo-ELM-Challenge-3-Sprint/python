@@ -1,3 +1,5 @@
+import main as nome_usuario
+
 # =============================================================================
 # FUNÇÕES DE TUTORIAIS
 # =============================================================================
@@ -246,10 +248,6 @@ def mostrar_menu_ajuda_principal():
             print("   - Com os guias ativos, o sistema mostra dicas ([Guia]: ...) e explicações extras")
             print("     para cada passo, ajudando você a entender melhor onde clicar e o que fazer.")
             print("   - Você pode ligar e desligar essa ajuda quando quiser!")
-            # REMOVER
-            # print("\n3. COMUNICAÇÃO PROATIVA VIA TELEGRAM:")
-            # print("   - Se você autorizar no cadastro, podemos enviar lembretes de consultas e outras")
-            # print("     informações importantes diretamente no seu Telegram.")
             print("\nQueremos que sua experiência seja a mais tranquila e fácil possível!")
         elif opcao_ajuda == '0':
             break

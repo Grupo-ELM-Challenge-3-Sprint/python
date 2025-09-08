@@ -1,6 +1,8 @@
-from assets.dados_cadastro_login.dados import _dados_de_usuarios, _dados_usuarios_servicos
-from assets.dados_cadastro_login.cadastro_e_login import cadastrar_usuario, fazer_login
-import assets.dados_cadastro_login.validacoes as validacoes
+from database.dados import _dados_de_usuarios, _dados_usuarios_servicos
+from core.cadastro_e_login import cadastrar_usuario, fazer_login
+import core.validacoes as validacoes
+import core.ajuda as ajuda 
+from core.tutoriais import *
 
 # Lista para armazenar os dados dos usuários (referência aos dados do módulo 'dados')
 lista_de_usuarios = _dados_de_usuarios
@@ -110,6 +112,7 @@ def menu_usuario_logado(usuario_logado):
             input("\nPressione Enter para voltar ao menu do usuário...")
 
         elif opcao_login == '8':  # Ajuda e Suporte
+            pass
             #Colocar o código de ajuda o usuário com GUIA INTERATIVO
 
         elif opcao_login == '0':
