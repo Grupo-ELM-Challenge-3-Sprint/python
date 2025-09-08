@@ -3,6 +3,8 @@ from core.cadastro_e_login import cadastrar_usuario, fazer_login
 import core.validacoes as validacoes
 import core.ajuda as ajuda 
 from core.tutoriais import *
+from core.ajuda import menu_ajuda_usuario
+from core.crud import submenu_crud_agendas
 
 # Lista para armazenar os dados dos usuários (referência aos dados do módulo 'dados')
 lista_de_usuarios = _dados_de_usuarios
@@ -74,6 +76,7 @@ def menu_usuario_logado(usuario_logado):
         print("6. Tutorial de como acessar as Teleconsulta")
         print("7. Tutorial de como acessar os Meus Dados")
         print("8. Ajuda e Suporte ao Usuário")
+        print("9. CRUD - Minhas Agendas (Listar/Adicionar/Atualizar/Excluir)")
         print("0. Sair (Logout)")
         print("=" * 46)
 
@@ -112,8 +115,9 @@ def menu_usuario_logado(usuario_logado):
             input("\nPressione Enter para voltar ao menu do usuário...")
 
         elif opcao_login == '8':  # Ajuda e Suporte
-            pass
-            #Colocar o código de ajuda o usuário com GUIA INTERATIVO
+            modo_guia_interativo_ativo = menu_ajuda_usuario(modo_guia_interativo_ativo)
+        elif opcao_login == '9':  # CRUD Agendas
+            submenu_crud_agendas(email_usuario)
 
         elif opcao_login == '0':
             print(f"\nSaindo do seu usuário... Até logo, {nome_usuario}!")

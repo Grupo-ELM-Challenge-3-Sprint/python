@@ -1,4 +1,3 @@
-import main as nome_usuario
 
 # =============================================================================
 # FUNÇÕES DE TUTORIAIS
@@ -113,7 +112,7 @@ def tutorial_receitas(nome_usuario, modo_guia_ativo):
 
 
 def tutorial_agendas(nome_usuario, modo_guia_ativo):
-    """Tutorial de como acessar agendas de consultas e exames"""
+    # Tutorial de como acessar agendas de consultas e exames
     print("\n╔══════════════════════════════════════════════╗")
     print("║    TUTORIAL: ACESSAR AGENDAS E CONSULTAS     ║")
     print("╚══════════════════════════════════════════════╝")
@@ -137,7 +136,7 @@ def tutorial_agendas(nome_usuario, modo_guia_ativo):
     print("\n✅ Nunca perca um compromisso médico importante!")
 
 def tutorial_teleconsulta(nome_usuario, modo_guia_ativo):
-    """Tutorial de como acessar teleconsultas"""
+    # Tutorial de como acessar teleconsultas
     print("\n╔══════════════════════════════════════════════╗")
     print("║        TUTORIAL: ACESSAR TELECONSULTAS       ║")
     print("╚══════════════════════════════════════════════╝")
@@ -162,7 +161,7 @@ def tutorial_teleconsulta(nome_usuario, modo_guia_ativo):
     print("\n✅ A teleconsulta é uma forma prática e segura de cuidar da sua saúde!")
 
 def tutorial_meus_dados(nome_usuario, modo_guia_ativo):
-    """Tutorial de como acessar e editar dados pessoais"""
+    # Tutorial de como acessar e editar dados pessoais
     print("\n╔══════════════════════════════════════════════╗")
     print("║       TUTORIAL: ACESSAR MEUS DADOS           ║")
     print("╚══════════════════════════════════════════════╝")
