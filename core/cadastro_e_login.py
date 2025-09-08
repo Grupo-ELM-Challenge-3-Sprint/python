@@ -1,6 +1,4 @@
-# Importa o módulo de validações (funções para validar CPF, email, celular)
 import core.validacoes as validacoes
-# Importa os dados de usuários e serviços do módulo de dados
 from database.dados import _dados_de_usuarios, _dados_usuarios_servicos
 
 # Lista para armazenar os dados dos usuários
@@ -9,32 +7,45 @@ lista_de_usuarios = _dados_de_usuarios
 
 # Função para cadastrar um novo usuário no sistema
 # Solicita os dados, valida e adiciona à lista
-#Cadastro Usuário
 def cadastrar_usuario():
     print("\n╔════════════════════════════════╗")
     print("║    CADASTRO DE NOVO USUÁRIO    ║")
     print("╚════════════════════════════════╝\n")
-    
-    nome = input("Nome Completo: ")
 
-    # Loop para garantir que o CPF seja válido
+    print("Digite 0 para cancelar o Cadastro\n")
+
+    # Nome completo com validação e opção de cancelar
+    while True:
+        nome = input("Nome Completo: ")
+        if nome == '0':
+            print("Cadastro cancelado.")
+            return
+        if validacoes.validar_nome(nome):
+            break
+        print("Nome inválido. Digite ao menos 2 letras (ex.: 'Al').")
+
+    # Loop para garantir que o CPF seja válido e não duplicado
     while True:
         cpf = input("CPF (apenas 11 números): ")
-        if validacoes.validar_cpf(cpf):
-            break
-        else:
-            print("CPF inválido. Deve conter 11 números.")
-
-    # Verifica se o CPF já existe na lista de usuários
-    for usuario in lista_de_usuarios:
-        if usuario["cpf"] == cpf:
-            print("\nUsuário com este CPF já cadastrado.")
+        if cpf == '0':
+            print("Cadastro cancelado.")
             return
+        if not validacoes.validar_cpf(cpf):
+            print("CPF inválido. Deve conter 11 números.")
+            continue
+        # Verifica se o CPF já existe na lista de usuários
+        if any(usuario["cpf"] == cpf for usuario in lista_de_usuarios):
+            print("Usuário com este CPF já cadastrado. Informe outro CPF.")
+            continue
+        break
 
     # Loop para garantir que o email seja válido
     #Verifica se o Email está escrito corretamente
     while True:
         email = input("Email: ")
+        if email == '0':
+            print("Cadastro cancelado.")
+            return
         if validacoes.validar_email(email):
             break
         else:
@@ -43,6 +54,9 @@ def cadastrar_usuario():
     # Loop para garantir que o celular seja válido
     while True:
         celular = input("Número de Celular (com DDD, apenas números): ")
+        if celular == '0':
+            print("Cadastro cancelado.")
+            return
         if validacoes.validar_celular(celular):
             break
         else:
@@ -50,7 +64,13 @@ def cadastrar_usuario():
     
     # Loop para garantir que as senhas coincidam
     while True:
-        senha = input("Crie uma senha: ")
+        senha = input("Crie uma senha (mín. 6 caracteres): ")
+        if senha == '0':
+            print("Cadastro cancelado.")
+            return
+        if not validacoes.validar_senha(senha):
+            print("Senha fraca. Use ao menos 6 caracteres.")
+            continue
         confirmar_senha = input("Confirme a senha: ")
         if senha == confirmar_senha:
             break
@@ -71,24 +91,31 @@ def fazer_login():
     print("\n╔════════════════════════════════╗")
     print("║          LOGIN USUÁRIO         ║")
     print("╚════════════════════════════════╝\n")
-    cpf_login = input("Digite seu CPF para login: ")
-    senha_login = input("Digite sua senha: ")
-    
-    usuario_encontrado = None
-    # Procura o usuário pelo CPF
-    for usuario in lista_de_usuarios:
-        if usuario["cpf"] == cpf_login:
-            usuario_encontrado = usuario
-            break
-            
-    if usuario_encontrado:
-        # Verifica se a senha está correta
-        if usuario_encontrado["senha"] == senha_login:
-            print(f"\nLogin bem-sucedido! Bem-vindo(a), {usuario_encontrado['nome']}!")
-            return usuario_encontrado # Apenas retorna o usuário
-        else:
-            print("\nSenha incorreta.")
+
+    while True:
+        cpf_login = input("CPF (11 dígitos) (ou 0 para voltar): ")
+        if cpf_login == '0':
             return None
-    else:
-        print("\nUsuário não encontrado. Verifique o CPF ou cadastre-se.")
-        return None # Retorna None se o login falhar
+        if not validacoes.validar_cpf(cpf_login):
+            print("CPF inválido. Digite apenas 11 números.")
+            continue
+
+        usuario_encontrado = None
+        for usuario in lista_de_usuarios:
+            if usuario["cpf"] == cpf_login:
+                usuario_encontrado = usuario
+                break
+
+        # Se não existe usuário com esse CPF, informa e volta ao menu principal
+        if not usuario_encontrado:
+            print("Usuário não encontrado. Verifique o CPF ou cadastre-se.")
+            return None
+
+        senha_login = input("Senha: ")
+
+        if usuario_encontrado["senha"] != senha_login:
+            print("Senha incorreta. Tente novamente.")
+            continue
+
+        print(f"\nLogin bem-sucedido! Bem-vindo(a), {usuario_encontrado['nome']}!")
+        return usuario_encontrado

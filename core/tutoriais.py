@@ -1,16 +1,13 @@
 
 # =============================================================================
-# FUNÇÕES DE TUTORIAIS
+# FUNÇÕES DE TUTORIAIS - USAR ESSE:
 # =============================================================================
 
-def tutorial_cadastro(nome_usuario, modo_guia_ativo):
-    """Tutorial de como cadastrar no app HC"""
+def tutorial_cadastro(modo_guia_ativo):
+    # Tutorial de como cadastrar no app HC
     print("\n╔══════════════════════════════════════════════╗")
     print("║        TUTORIAL: COMO SE CADASTRAR          ║")
     print("╚══════════════════════════════════════════════╝")
-    
-    if modo_guia_ativo:
-        print("\n[Guia]: Vamos aprender passo a passo como se cadastrar no sistema!")
     
     print("\n📝 PASSO A PASSO PARA CADASTRO:")
     print("1. No menu principal, escolha a opção '1. Cadastro de Novo Usuário'")
@@ -32,14 +29,11 @@ def tutorial_cadastro(nome_usuario, modo_guia_ativo):
     
     print("\n✅ Após o cadastro, você poderá fazer login e acessar todos os serviços!")
 
-def tutorial_login(nome_usuario, modo_guia_ativo):
-    """Tutorial de como fazer login no app HC"""
+def tutorial_login(modo_guia_ativo):
+    # Tutorial de como fazer login no app HC
     print("\n╔══════════════════════════════════════════════╗")
     print("║         TUTORIAL: COMO FAZER LOGIN           ║")
     print("╚══════════════════════════════════════════════╝")
-    
-    if modo_guia_ativo:
-        print("\n[Guia]: Vamos aprender como entrar no sistema de forma segura!")
     
     print("\n🔐 PASSO A PASSO PARA LOGIN:")
     print("1. No menu principal, escolha a opção '2. Login (Entrar no Sistema)'")
@@ -56,14 +50,11 @@ def tutorial_login(nome_usuario, modo_guia_ativo):
     
     print("\n✅ Se os dados estiverem corretos, você será direcionado ao menu do usuário!")
 
-def tutorial_resultados(nome_usuario, modo_guia_ativo):
-    """Tutorial de como acessar resultados de exames"""
+def tutorial_resultados(modo_guia_ativo):
+    # Tutorial de como acessar resultados de exames
     print("\n╔══════════════════════════════════════════════╗")
     print("║     TUTORIAL: ACESSAR RESULTADOS DE EXAMES   ║")
     print("╚══════════════════════════════════════════════╝")
-    
-    if modo_guia_ativo:
-        print("\n[Guia]: Vamos aprender como visualizar seus exames médicos!")
     
     print("\n🔬 COMO ACESSAR SEUS RESULTADOS:")
     print("1. Faça login no sistema")
@@ -76,18 +67,15 @@ def tutorial_resultados(nome_usuario, modo_guia_ativo):
         print("• Os resultados ficam disponíveis 24h por dia")
         print("• Você pode acessar de qualquer lugar")
         print("• Os dados são atualizados automaticamente")
-    print("• Em caso de dúvidas, consulte seu médico")
+        print("• Em caso de dúvidas, consulte seu médico")
     
     print("\n✅ Seus resultados estão sempre seguros e acessíveis!")
 
-def tutorial_receitas(nome_usuario, modo_guia_ativo):
-    """Tutorial de como acessar receitas médicas"""
+def tutorial_receitas(modo_guia_ativo):
+    # Tutorial de como acessar receitas médicas
     print("\n╔══════════════════════════════════════════════╗")
     print("║      TUTORIAL: ACESSAR RECEITAS MÉDICAS      ║")
     print("╚══════════════════════════════════════════════╝")
-    
-    if modo_guia_ativo:
-        print("\n[Guia]: Vamos aprender como consultar suas prescrições médicas!")
     
     print("\n💊 COMO ACESSAR SUAS RECEITAS:")
     print("1. Faça login no sistema")
@@ -104,21 +92,11 @@ def tutorial_receitas(nome_usuario, modo_guia_ativo):
     
     print("\n✅ Suas receitas ficam sempre disponíveis para consulta!")
 
-
-
-
-
-# =======================================================================================================
-
-
-def tutorial_agendas(nome_usuario, modo_guia_ativo):
+def tutorial_agendas(modo_guia_ativo):
     # Tutorial de como acessar agendas de consultas e exames
     print("\n╔══════════════════════════════════════════════╗")
     print("║    TUTORIAL: ACESSAR AGENDAS E CONSULTAS     ║")
     print("╚══════════════════════════════════════════════╝")
-    
-    if modo_guia_ativo:
-        print("\n[Guia]: Vamos aprender como gerenciar seus compromissos médicos!")
     
     print("\n📅 COMO ACESSAR SUAS AGENDAS:")
     print("1. Faça login no sistema")
@@ -135,14 +113,11 @@ def tutorial_agendas(nome_usuario, modo_guia_ativo):
     
     print("\n✅ Nunca perca um compromisso médico importante!")
 
-def tutorial_teleconsulta(nome_usuario, modo_guia_ativo):
+def tutorial_teleconsulta(modo_guia_ativo):
     # Tutorial de como acessar teleconsultas
     print("\n╔══════════════════════════════════════════════╗")
     print("║        TUTORIAL: ACESSAR TELECONSULTAS       ║")
     print("╚══════════════════════════════════════════════╝")
-    
-    if modo_guia_ativo:
-        print("\n[Guia]: Vamos aprender como participar de consultas online!")
     
     print("\n💻 COMO ACESSAR TELECONSULTAS:")
     print("1. Faça login no sistema")
@@ -160,14 +135,11 @@ def tutorial_teleconsulta(nome_usuario, modo_guia_ativo):
     
     print("\n✅ A teleconsulta é uma forma prática e segura de cuidar da sua saúde!")
 
-def tutorial_meus_dados(nome_usuario, modo_guia_ativo):
+def tutorial_meus_dados(modo_guia_ativo):
     # Tutorial de como acessar e editar dados pessoais
     print("\n╔══════════════════════════════════════════════╗")
     print("║       TUTORIAL: ACESSAR MEUS DADOS           ║")
     print("╚══════════════════════════════════════════════╝")
-    
-    if modo_guia_ativo:
-        print("\n[Guia]: Vamos aprender como gerenciar suas informações pessoais!")
     
     print("\n👤 COMO ACESSAR SEUS DADOS:")
     print("1. Faça login no sistema")
@@ -187,24 +159,27 @@ def tutorial_meus_dados(nome_usuario, modo_guia_ativo):
 
 
 
+# Isso aparece no tutoriais do usuário SEM LOGAR, no início do programa
 
 def mostrar_menu_ajuda_principal():
     while True:
         print("\n╔═════════════════════════════════════════╗")
         print("║      AJUDA E INFORMAÇÕES GERAIS         ║")
         print("╚═════════════════════════════════════════╝\n")
-        print("Bem-vindo à Central de Ajuda do Portal do Paciente HC!")
+        print("Bem-vindo à Central de Ajuda do SimplesHC!")
         print("Aqui você encontra informações para usar nosso sistema.\n")
         print("1. Como faço para me CADASTRAR no sistema?")
         print("2. Como faço para fazer LOGIN (entrar) no sistema?")
-        print("3. Sobre o SISTEMA: o que ele oferece e como funciona o TELEATENDIMENTO.")
+        print("3. Sobre o SISTEMA: o que ele oferece.")
         print("4. SUPORTE ADICIONAL: conheça o Assistente Virtual e os Guias Interativos.")
         print("0. VOLTAR ao Menu Principal.")
         print("=" * 45)
         opcao_ajuda = input("Escolha uma opção de ajuda (digite o número): ")
 
         if opcao_ajuda == '1':
-            print("\n--- Como se Cadastrar ---")
+            print("\n╔═════════════════════════════════════════╗")
+            print("║      Como se cadastrar no SimplesHC?    ║")
+            print("╚═════════════════════════════════════════╝\n")
             print("1. No Menu Principal, escolha a opção '1. Cadastro de Novo Usuário'.")
             print("2. Você precisará informar alguns dados pessoais:")
             print("   - Nome Completo.")
@@ -215,32 +190,32 @@ def mostrar_menu_ajuda_principal():
             print("\nDica: Tenha seus documentos por perto para facilitar!")
 
         elif opcao_ajuda == '2':
-            print("\n--- Como Fazer Login (Entrar no Sistema) ---")
+            print("\n╔═════════════════════════════════════════╗")
+            print("║      Como fazer login no SimplesHC?     ║")
+            print("╚═════════════════════════════════════════╝\n")
             print("1. No Menu Principal, escolha a opção '2. Login (Entrar no Sistema)'.")
             print("2. Informe seu CPF (o mesmo que usou no cadastro).")
             print("3. Digite a Senha que você criou.")
             print("\nProblemas para entrar? Verifique se digitou o CPF e a senha corretamente.")
-            print("  (Em breve: opção 'Esqueci minha senha' para ajudar a recuperar o acesso).")
 
         elif opcao_ajuda == '3':
-            print("\n--- Sobre o Sistema e o Teleatendimento ---")
-            print("Este sistema foi criado para facilitar seu acesso aos serviços de saúde do HC.")
-            print("Com ele, depois de fazer login, você pode:")
-            print("  - Ver seus resultados de exames.")
-            print("  - Acessar suas receitas médicas.")
-            print("  - Consultar seus agendamentos (consultas, exames).")
-            print("  - Obter informações e participar de TELECONSULTAS (atendimento médico online).")
-            print("\nO TELEATENDIMENTO permite que você converse com profissionais de saúde sem sair de casa,")
-            print("  usando seu computador ou celular com internet. É prático e seguro!")
+            print("\n╔═════════════════════════════════════════╗")
+            print("║            Sobre o SimplesHC!           ║")
+            print("╚═════════════════════════════════════════╝\n")
+            print("Este sistema foi criado para facilitar seu acesso aos serviços de saúde do Hospital HC.")
             print("\nNosso objetivo é que a tecnologia seja uma aliada no seu cuidado!")
 
         elif opcao_ajuda == '4':
-            print("\n--- Suporte Adicional: Facilitando seu Uso ---")
+            print("\n╔═════════════════════════════════════════╗")
+            print("║   Alguns recursos extras do SimplesHC!  ║")
+            print("╚═════════════════════════════════════════╝\n")
             print("Sabemos que usar novas tecnologias pode gerar dúvidas. Por isso, oferecemos:")
-            print("1. ASSISTENTE VIRTUAL (Chatbot):")
+            
+            print("\n1. ASSISTENTE VIRTUAL (Chatbot):")
             print("   - Após o login, na seção 'Ajuda e Suporte', você pode conversar com nosso assistente.")
             print("   - Ele responde perguntas comuns como 'Onde vejo meus exames?' ou 'Como acesso a teleconsulta?'.")
             print("   - É como um tira-dúvidas rápido, disponível a qualquer hora!")
+
             print("\n2. GUIAS INTERATIVOS (Modo de Ajuda Visual):")
             print("   - Se precisar de mais ajuda para navegar nas telas, ative os 'Guias Interativos'.")
             print("   - Essa opção também fica em 'Ajuda e Suporte' após o login.")
