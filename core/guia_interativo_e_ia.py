@@ -1,7 +1,7 @@
 def guia_interativo_e_ia(modo_guia_interativo_ativo: bool) -> bool:
     while True:
         print("\n╔══════════════════════════════════════════════╗")
-        print("║            IA e Guia Interativo        ║")
+        print("║            IA e Guia Interativo              ║")
         if modo_guia_interativo_ativo:
             print("║         ⭐ Modo Guia Interativo ATIVO ⭐     ║")
         print("╚══════════════════════════════════════════════╝\n")
@@ -14,7 +14,7 @@ def guia_interativo_e_ia(modo_guia_interativo_ativo: bool) -> bool:
 
         prompt_ajuda = "Escolha uma opção de ajuda (digite o número): "
         if modo_guia_interativo_ativo:
-            prompt_ajuda = "[Guia] Digite o número da ajuda que precisa (1, 2, 3, 4 ou 0): "
+            prompt_ajuda = "[Guia] Digite o número da ajuda que precisa (1, 2 ou 0): "
 
         escolha_ajuda = input(prompt_ajuda)
         
