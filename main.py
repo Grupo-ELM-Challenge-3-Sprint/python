@@ -8,7 +8,6 @@ from core.tutoriais import *
 # Lista para armazenar os dados dos usuários (referência aos dados do módulo 'dados')
 lista_de_usuarios = _dados_de_usuarios
 
-# Variável global para controlar o modo guia interativo
 modo_guia_interativo_ativo = False
 
 
@@ -17,7 +16,7 @@ modo_guia_interativo_ativo = False
 # Também exibe dicas se o modo guia estiver ativo
 # Menu Principal
 def mostrar_menu_principal():
-    global modo_guia_interativo_ativo  # Para exibir status do guia
+    global modo_guia_interativo_ativo
     print("\n" + "=" * 42)
     print("    BEM-VINDO AO SIMPLESHC      ")
     print("=" * 42)
@@ -138,14 +137,12 @@ if __name__ == "__main__":
             cadastrar_usuario()
             input("\nPressione Enter para voltar ao menu principal...")
 
-
         elif opcao_principal == '2':
             usuario_logado = fazer_login()
             if usuario_logado:
                 menu_usuario_logado(usuario_logado)
             else:  # Login falhou
                 input("\nPressione Enter para voltar ao menu principal...")
-
 
         elif opcao_principal == '3':
             recuperar_senha()

@@ -92,8 +92,10 @@ def fazer_login():
     print("║          LOGIN USUÁRIO         ║")
     print("╚════════════════════════════════╝\n")
 
+    print("Digite 0 para cancelar o Login\n")
+
     while True:
-        cpf_login = input("CPF (11 dígitos) (ou 0 para voltar): ")
+        cpf_login = input("CPF (11 dígitos): ")
         if cpf_login == '0':
             return None
         if not validacoes.validar_cpf(cpf_login):
@@ -127,8 +129,10 @@ def recuperar_senha():
     print("║        RECUPERAÇÃO DE SENHA - SIMPLESHC      ║")
     print("╚══════════════════════════════════════════════╝\n")
     
+    print("Digite 0 para cancelar o Cadastro\n")
+
     while True:
-        cpf = input("Digite seu CPF (11 dígitos) ou 0 para voltar: ")
+        cpf = input("Digite seu CPF (11 dígitos): ")
         if cpf == '0':
             return
         
