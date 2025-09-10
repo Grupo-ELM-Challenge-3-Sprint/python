@@ -1,5 +1,5 @@
 import core.validacoes as validacoes
-from database.dados import _dados_de_usuarios, _dados_usuarios_servicos
+from database.dados import _dados_de_usuarios
 
 # Lista para armazenar os dados dos usuários
 # Cada item da lista será um dicionário com os dados do usuário
@@ -22,7 +22,7 @@ def cadastrar_usuario():
             return
         if validacoes.validar_nome(nome):
             break
-        print("Nome inválido. Digite ao menos 2 letras (ex.: 'Al').")
+        print("Nome inválido. Digite ao menos 2 letras.")
 
     # Loop para garantir que o CPF seja válido e não duplicado
     while True:
@@ -78,11 +78,8 @@ def cadastrar_usuario():
             print("As senhas não coincidem. Tente novamente.")
     
     # Cria o dicionário do novo usuário e adiciona à lista
-    novo_usuario = {"cpf": cpf, "nome": nome, "email": email, "celular": celular, "senha": senha}
+    novo_usuario = {"cpf": cpf, "nome": nome, "email": email, "celular": celular, "senha": senha, "admin": False}
     lista_de_usuarios.append(novo_usuario)
-    # Adiciona uma entrada vazia para o novo usuário em _dados_usuarios_servicos
-    _dados_usuarios_servicos[email] = {"resultados": [], "receitas": [], "agendas": []}
-    print(f"\nUsuário {nome} cadastrado com sucesso!")
 
 # Função para login do usuário
 # Solicita CPF e senha, verifica e retorna o usuário logado ou None
@@ -96,7 +93,8 @@ def fazer_login():
     while True:
         cpf_login = input("CPF (11 dígitos): ")
         if cpf_login == '0':
-            return None
+            print("Login cancelado.")
+            return
         if not validacoes.validar_cpf(cpf_login):
             print("CPF inválido. Digite apenas 11 números.")
             continue
@@ -107,25 +105,30 @@ def fazer_login():
                 usuario_encontrado = usuario
                 break
 
-        # Se não existe usuário com esse CPF, informa e volta ao menu principal
+        # Se não existe usuário com esse CPF, informa e faz o usuário inserir novamente o cpf
         if not usuario_encontrado:
             print("Usuário não encontrado. Verifique o CPF ou cadastre-se.")
-            return None
-
-        senha_login = input("Senha: ")
-
-        if usuario_encontrado["senha"] != senha_login:
-            print("Senha incorreta. Tente novamente.")
             continue
 
-        print(f"\nLogin bem-sucedido! Bem-vindo(a), {usuario_encontrado['nome']}!")
-        return usuario_encontrado
+        while True:
+            senha_login = input("Senha: ")
+            
+            if senha_login == '0':
+                print("Login cancelado.")
+                return
+
+            if usuario_encontrado["senha"] != senha_login:
+                print("Senha incorreta. Tente novamente.")
+                continue
+            else:
+                print(f"\nLogin bem-sucedido! Bem-vindo(a), {usuario_encontrado['nome']}!")
+                return usuario_encontrado
 
 # Redefinir senha do usuário
 # Função para recuperar senha do SimplesHC usando CPF e email
 def recuperar_senha():
     print("\n╔══════════════════════════════════════════════╗")
-    print("║        REDEFINIR DE SENHA - SIMPLESHC      ║")
+    print("║        REDEFINIR DE SENHA - SIMPLESHC        ║")
     print("╚══════════════════════════════════════════════╝\n")
     
     print("Digite 0 para cancelar o Cadastro\n")

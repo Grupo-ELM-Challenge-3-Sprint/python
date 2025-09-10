@@ -1,4 +1,4 @@
-def guia_interativo_e_ia(modo_guia_interativo_ativo: bool) -> bool:
+def guia_interativo_e_ia(modo_guia_interativo_ativo):
     while True:
         print("\n╔══════════════════════════════════════════════╗")
         print("║            IA e Guia Interativo              ║")
@@ -9,7 +9,7 @@ def guia_interativo_e_ia(modo_guia_interativo_ativo: bool) -> bool:
         print("Selecione um tópico para saber mais:")
         print("1. Falar com o Assistente Virtual (para Perguntas Frequentes).")
         print(f"2. Modo Guia Interativo: [{'DESATIVAR' if modo_guia_interativo_ativo else 'ATIVAR'}] Ajuda visual passo a passo.")
-        print("\n  0. Voltar ao menu do usuário.")
+        print("\n0. Voltar ao menu do usuário.")
         print("=" * 50)
 
         prompt_ajuda = "Escolha uma opção de ajuda (digite o número): "

@@ -9,15 +9,17 @@ def tutorial_cadastro(modo_guia_ativo):
     print("╚══════════════════════════════════════════════╝")
     
     print("\n📝 PASSO A PASSO PARA CADASTRO:")
-    print("1. No menu principal, escolha a opção '1. Cadastro de Novo Usuário'")
-    print("2. Preencha seus dados pessoais:")
+    print("1. No app Portal do Paciente HC, clique em 'Acessar Portal'")
+    print("2. Em seguida, clique em 'Cadastrar senha'")
+    print("3. Preencha seus dados pessoais:")
     print("   • Nome completo (ex: João Silva Santos)")
     print("   • CPF com 11 números (ex: 12345678901)")
     print("   • Email válido (ex: joao@email.com)")
     print("   • Celular com DDD (ex: 11987654321)")
     print("   • Crie uma senha segura")
-    print("3. Confirme sua senha")
-    print("4. Aguarde a confirmação de cadastro")
+    print("4. Ao terminar de preencher, clique em 'Cadastrar Senha'")
+    print("5. Em seguida, irá aparecer uma tela de Senha Cadastrada com sucesso")
+    print("6. E ao final, clique em 'Acessar Agora'")
     
     if modo_guia_ativo:
         print("\n[Guia]: 💡 DICAS IMPORTANTES:")
@@ -35,10 +37,10 @@ def tutorial_login(modo_guia_ativo):
     print("╚══════════════════════════════════════════════╝")
     
     print("\n🔐 PASSO A PASSO PARA LOGIN:")
-    print("1. No menu principal, escolha a opção '2. Login (Entrar no Sistema)'")
-    print("2. Digite seu CPF (apenas os 11 números)")
-    print("3. Digite sua senha")
-    print("4. Pressione Enter para confirmar")
+    print("1. No app Portal do Paciente HC, clique em 'Acessar Portal'")
+    print("2. Em seguida, digite seu CPF (apenas os 11 números)")
+    print("3. E digite sua senha")
+    print("4. Pressione 'Acessar' para entrar no Portal do Paciente HC")
     
     if modo_guia_ativo:
         print("\n[Guia]: 💡 DICAS DE SEGURANÇA:")
@@ -57,11 +59,10 @@ def tutorial_esqueci_senha(modo_guia_ativo):
 
     print("\n🔑 COMO RECUPERAR SUA SENHA:")
     print("1. Na tela de login do Portal do Paciente HC")
-    print("2. Clique em 'Esqueci minha senha' ou 'Recuperar senha'")
-    print("3. Digite seu CPF cadastrado no sistema")
-    print("4. Digite o email cadastrado no seu perfil")
-    print("5. Verifique sua caixa de entrada (e spam) para o email de recuperação")
-    print("6. Siga as instruções do email para criar uma nova senha")
+    print("2. Clique em 'Esqueci minha senha'")
+    print("3. Digite seu CPF")
+    print("4. Digite sua data de nascimento")
+    print("5. Em seguida, clique em Localizar Paciente")
 
     if modo_guia_ativo:
         print("\n[Guia]: 💡 DICAS IMPORTANTES:")

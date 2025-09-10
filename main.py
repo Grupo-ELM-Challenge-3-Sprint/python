@@ -1,4 +1,4 @@
-from core.cadastro_login_senha import cadastrar_usuario, fazer_login, recuperar_senha
+from core.cadastro_login_senha import *
 from core.menu import *
 
 # Loop principal do sistema
@@ -14,8 +14,6 @@ if __name__ == "__main__":
             usuario_logado = fazer_login()
             if usuario_logado:
                 menu_usuario_logado(usuario_logado)
-            else:  # Login falhou PRECISAMOS ARRUMAR ESSE LOGIN... POIS ELE PARA O LOGIN SE INSERIR UM CPF COM 11 DÍGITOS QUE NÃO EXISTE
-                input("\nPressione Enter para voltar ao menu principal...")
 
         elif opcao_principal == '3':
             recuperar_senha()
