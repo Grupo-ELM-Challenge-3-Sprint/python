@@ -1,6 +1,5 @@
-
 # =============================================================================
-# FUNÇÕES DE TUTORIAIS - USAR ESSE:
+# FUNÇÕES DE TUTORIAIS
 # =============================================================================
 
 def tutorial_cadastro(modo_guia_ativo):
@@ -50,13 +49,10 @@ def tutorial_login(modo_guia_ativo):
     
     print("\n✅ Se os dados estiverem corretos, você entra no Portal e pode usar os serviços do HC.")
 
-
-#Tutoriais Depois que usuário logou
-
 def tutorial_esqueci_senha(modo_guia_ativo):
     # Tutorial de como recuperar senha no Portal do Paciente HC
     print("\n╔══════════════════════════════════════════════╗")
-    print("║      TUTORIAL: ESQUECI MINHA SENHA (HC)     ║")
+    print("║      TUTORIAL: ESQUECI MINHA SENHA (HC)      ║")
     print("╚══════════════════════════════════════════════╝")
 
     print("\n🔑 COMO RECUPERAR SUA SENHA:")
@@ -290,4 +286,3 @@ def mostrar_menu_ajuda_principal():
         else:
             print("\nOpção de ajuda inválida. Por favor, escolha um número válido do menu.")
         input("\nPressione Enter para continuar na Ajuda ou '0' para voltar ao Menu Principal...")
-

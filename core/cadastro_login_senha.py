@@ -86,7 +86,6 @@ def cadastrar_usuario():
 
 # Função para login do usuário
 # Solicita CPF e senha, verifica e retorna o usuário logado ou None
-# Login Usuário
 def fazer_login():
     print("\n╔════════════════════════════════╗")
     print("║          LOGIN USUÁRIO         ║")
@@ -122,11 +121,11 @@ def fazer_login():
         print(f"\nLogin bem-sucedido! Bem-vindo(a), {usuario_encontrado['nome']}!")
         return usuario_encontrado
 
-
+# Redefinir senha do usuário
+# Função para recuperar senha do SimplesHC usando CPF e email
 def recuperar_senha():
-    """Função para recuperar senha do SimplesHC usando CPF e email"""
     print("\n╔══════════════════════════════════════════════╗")
-    print("║        RECUPERAÇÃO DE SENHA - SIMPLESHC      ║")
+    print("║        REDEFINIR DE SENHA - SIMPLESHC      ║")
     print("╚══════════════════════════════════════════════╝\n")
     
     print("Digite 0 para cancelar o Cadastro\n")
