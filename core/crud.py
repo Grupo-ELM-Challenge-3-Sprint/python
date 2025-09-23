@@ -8,14 +8,16 @@ lista_de_usuarios = _dados_de_usuarios
 # FUNÇÕES CRUD ADMINISTRATIVAS
 # =============================================================================
 
+
+# Verifica se o usuário logado é administrador 
 def verificar_se_eh_admin(usuario_logado):
-    # Verifica se o usuário logado é administrador 
     try:
         return usuario_logado.get("admin", False)
     except Exception as e:
         print(f"Erro ao verificar permissão de administrador: {e}")
         return False
 
+#Menu Listar Usuários CRUD
 def listar_usuarios():
     # Lista todos os usuários cadastrados no sistema
     try:
@@ -42,6 +44,8 @@ def listar_usuarios():
     finally:
         input("\nPressione Enter para continuar...")
 
+
+#Menu Criar Novo Usuário CRUD
 def criar_usuario_admin():
     # Cria um novo usuário através do painel administrativo
     print("\n" + "=" * 50)
@@ -138,6 +142,8 @@ def criar_usuario_admin():
     finally:
         input("\nPressione Enter para continuar...")
 
+
+#Menu Atualizar dados dos usuários CRUD
 def atualizar_usuario():
     # Atualiza dados de um usuário existente
     print("\n" + "=" * 50)
@@ -226,6 +232,8 @@ def atualizar_usuario():
     finally:
         input("\nPressione Enter para continuar...")
 
+
+#Menu Deletar CRUD
 def deletar_usuario():
     # Remove um usuário do sistema
     print("\n" + "=" * 50)
@@ -284,6 +292,8 @@ def deletar_usuario():
     finally:
         input("\nPressione Enter para continuar...")
 
+
+#Menu Exibir Opções CRUD
 def menu_administrativo(usuario_logado):
     # Menu principal do painel administrativo
     if not verificar_se_eh_admin(usuario_logado):
